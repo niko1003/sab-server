@@ -7,9 +7,9 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-import org.sab.bsm.model.Role;
-import org.sab.bsm.model.RoleEnum;
 import org.sab.bsm.model.User;
+import org.sab.bsm.model.enums.Role;
+import org.sab.bsm.model.enums.Role.RoleEnum;
 import org.sab.bsm.payload.request.LoginRequest;
 import org.sab.bsm.payload.request.SignupRequest;
 import org.sab.bsm.payload.response.JwtResponse;

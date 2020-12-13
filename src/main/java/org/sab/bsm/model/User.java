@@ -14,6 +14,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.sab.bsm.model.enums.Role;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 @Entity
@@ -37,7 +39,8 @@ public class User extends _BaseModel {
 	private String password;
 
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	@JoinTable(name = "default.user_roles_mapping", joinColumns = {
+			@JoinColumn(name = "user_id") }, inverseJoinColumns = { @JoinColumn(name = "role_id") })
 	private Set<Role> roles = new HashSet<>();
 
 	@JsonCreator
